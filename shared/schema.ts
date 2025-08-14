@@ -11,7 +11,7 @@ export const applications = pgTable("applications", {
   imageUrl: text("image_url").notNull(),
   downloadUrl: text("download_url").notNull(),
   fileSize: text("file_size").notNull(),
-  downloads: integer("downloads").default(0),
+  downloads: integer("downloads").default(0).notNull(),
 
   createdAt: timestamp("created_at").default(sql`now()`),
 });

@@ -29,8 +29,8 @@ export class MemStorage implements IStorage {
         name: "Calculator",
         description: "Simple desktop calculator application",
         version: "v1.0.0",
-        imageUrl: "assets/app-screenshots/Screenshot 2025-08-14 123946.png",
-        downloadUrl: "assets/app-screenshots/Calculator-1.0.0-win64.exe",
+        imageUrl: "/assets/app-screenshots/Screenshot 2025-08-14 123946.png",
+        downloadUrl: "/downloads/Calculator-1.0.0-win64.exe",
         fileSize: "45MB",
         downloads: 0
       }
@@ -53,6 +53,7 @@ export class MemStorage implements IStorage {
         ...app,
         id,
         createdAt: new Date(),
+        downloads: app.downloads ?? 0,
       };
       this.applications.set(id, application);
     });
@@ -72,6 +73,7 @@ export class MemStorage implements IStorage {
       ...insertApp,
       id,
       createdAt: new Date(),
+      downloads: insertApp.downloads ?? 0,
     };
     this.applications.set(id, app);
     return app;
@@ -91,6 +93,8 @@ export class MemStorage implements IStorage {
       ...insertDownload,
       id,
       downloadedAt: new Date(),
+      applicationId: insertDownload.applicationId ?? null,
+      userAgent: insertDownload.userAgent ?? null,
     };
     this.downloads.set(id, download);
     return download;

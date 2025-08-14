@@ -75,7 +75,7 @@ export default function AppCard({ application, index }: AppCardProps) {
         </p>
         
         <div className="flex items-center justify-between mb-3 text-xs text-slate-500">
-          <span>{formatDownloads(application.downloads)} downloads</span>
+          <span>{formatDownloads(application.downloads || 0)} downloads</span>
           <span>{application.fileSize}</span>
         </div>
         
