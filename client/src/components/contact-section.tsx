@@ -1,4 +1,4 @@
-import { Mail, Github, Twitter } from "lucide-react";
+import { Github } from "lucide-react";
 
 export default function ContactSection() {
   return (
@@ -8,14 +8,7 @@ export default function ContactSection() {
           Contact
         </h2>
         
-        <div className="flex justify-center gap-4">
-          <a 
-            href="mailto:alex@example.com" 
-            className="text-slate-600 hover:text-slate-900"
-          >
-            <Mail className="h-5 w-5" />
-          </a>
-          
+        <div className="flex justify-center">
           <a 
             href="https://github.com" 
             target="_blank"
@@ -23,15 +16,6 @@ export default function ContactSection() {
             className="text-slate-600 hover:text-slate-900"
           >
             <Github className="h-5 w-5" />
-          </a>
-          
-          <a 
-            href="https://twitter.com" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-slate-600 hover:text-slate-900"
-          >
-            <Twitter className="h-5 w-5" />
           </a>
         </div>
       </div>
