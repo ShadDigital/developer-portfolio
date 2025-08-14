@@ -29,7 +29,7 @@ export class MemStorage implements IStorage {
         name: "Calculator",
         description: "Simple desktop calculator application",
         version: "v1.0.0",
-        imageUrl: "/assets/calculator-screenshot.png",
+        imageUrl: "/assets/app-screenshots/Screenshot 2025-08-14 123946.png",
         downloadUrl: "/downloads/Calculator-1.0.0-win64.exe",
         fileSize: "45MB",
         downloads: 0
