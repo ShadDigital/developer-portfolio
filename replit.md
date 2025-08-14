@@ -2,7 +2,14 @@
 
 ## Overview
 
-A full-stack web application showcasing a developer's portfolio with downloadable applications. The system features a React frontend with shadcn/ui components, an Express.js backend, and PostgreSQL database integration using Drizzle ORM. The application displays a professional portfolio with application showcases, download tracking, and contact information.
+A clean, minimalist full-stack portfolio website showcasing a developer's applications with download functionality. The system features a React frontend with shadcn/ui components, Express.js backend, and in-memory storage for development. The application displays a professional bio section and application downloads with live tracking that starts from 0.
+
+## Recent Changes (August 14, 2025)
+- Removed rating system completely from database schema and UI components
+- Created organized asset structure for application images and downloads
+- Fixed TypeScript errors and ensured error-free operation
+- Implemented clean, minimalist design without complex animations
+- Set up proper static file serving for both downloads and assets folders
 
 ## User Preferences
 
@@ -33,9 +40,10 @@ Preferred communication style: Simple, everyday language.
 - **Fallback**: In-memory storage implementation for development/testing
 
 ### Database Schema Design
-- **Applications Table**: Stores app metadata including name, description, version, download URLs, file sizes, download counts, and ratings
-- **Downloads Table**: Tracks individual download events with user agent and timestamp information
+- **Applications Table**: Stores app metadata including name, description, version, download URLs, file sizes, and download counts (ratings removed)
+- **Downloads Table**: Tracks individual download events with user agent and timestamp information  
 - **Relationships**: One-to-many relationship between applications and downloads
+- **File Organization**: Static assets served from public/assets/ and public/downloads/ folders
 
 ### Development Environment
 - **Build System**: Vite for frontend bundling with React plugin
