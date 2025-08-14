@@ -32,7 +32,7 @@ export class MemStorage implements IStorage {
         imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=240",
         downloadUrl: "/downloads/taskmaster-pro.dmg",
         fileSize: "45MB",
-        downloads: 12400,
+        downloads: 0,
         rating: "4.9"
       },
       {
@@ -42,7 +42,7 @@ export class MemStorage implements IStorage {
         imageUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=240",
         downloadUrl: "/downloads/codesync.dmg",
         fileSize: "78MB",
-        downloads: 8700,
+        downloads: 0,
         rating: "4.7"
       },
       {
@@ -52,7 +52,7 @@ export class MemStorage implements IStorage {
         imageUrl: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=240",
         downloadUrl: "/downloads/dataviz-mobile.apk",
         fileSize: "32MB",
-        downloads: 15200,
+        downloads: 0,
         rating: "4.8"
       },
       {
@@ -62,7 +62,7 @@ export class MemStorage implements IStorage {
         imageUrl: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=240",
         downloadUrl: "/downloads/devtools-pro.exe",
         fileSize: "125MB",
-        downloads: 9800,
+        downloads: 0,
         rating: "4.6"
       },
       {
@@ -72,7 +72,7 @@ export class MemStorage implements IStorage {
         imageUrl: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=240",
         downloadUrl: "/downloads/cloudsync-desktop.dmg",
         fileSize: "89MB",
-        downloads: 22100,
+        downloads: 0,
         rating: "4.9"
       },
       {
@@ -82,7 +82,7 @@ export class MemStorage implements IStorage {
         imageUrl: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=240",
         downloadUrl: "/downloads/terminal-master.deb",
         fileSize: "24MB",
-        downloads: 6300,
+        downloads: 0,
         rating: "4.5"
       }
     ];
