@@ -27,15 +27,15 @@ export default function HeroSection({ stats }: HeroSectionProps) {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="mb-12">
           <h1 className="text-4xl font-bold text-slate-900 mb-4">
-            Alex Chen
+            Shadrack Don
           </h1>
           <p className="text-lg text-slate-600 mb-8">
-            Developer creating useful applications
+            <b>C++</b> & <b>Python</b> Developer with a passion for building scalable and efficient applications.
           </p>
           
           <div className="flex justify-center gap-8 text-sm text-slate-500 mb-8">
-            <span>{stats ? `${formatNumber(stats.totalDownloads)}` : "74k"} Downloads</span>
-            <span>{stats ? stats.totalApps : 6} Apps</span>
+            <span>{stats ? `${formatNumber(stats.totalDownloads)}` : "..."} Downloads</span>
+            <span>{stats ? stats.totalApps : "..."} Apps</span>
             <span>4.8 Rating</span>
           </div>
           
