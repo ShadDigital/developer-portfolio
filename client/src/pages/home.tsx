@@ -11,9 +11,7 @@ export default function Home() {
     queryKey: ["/api/applications"],
   });
 
-  const { data: stats } = useQuery<{ totalDownloads: number; totalApps: number }>({
-    queryKey: ["/api/stats"],
-  });
+
 
   if (isLoading) {
     return (
@@ -49,7 +47,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <Navigation />
-      <HeroSection stats={stats} />
+      <HeroSection />
       <DownloadsSection applications={applications || []} />
       <ContactSection />
       

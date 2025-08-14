@@ -1,13 +1,8 @@
 import { Button } from "@/components/ui/button";
 
-interface HeroSectionProps {
-  stats?: {
-    totalDownloads: number;
-    totalApps: number;
-  };
-}
+interface HeroSectionProps {}
 
-export default function HeroSection({ stats }: HeroSectionProps) {
+export default function HeroSection(): JSX.Element {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -32,11 +27,6 @@ export default function HeroSection({ stats }: HeroSectionProps) {
           <p className="text-lg text-slate-600 mb-8">
             <b>C++</b> & <b>Python</b> Developer with a passion for building scalable and efficient applications.
           </p>
-          
-          <div className="flex justify-center gap-8 text-sm text-slate-500 mb-8">
-            <span>{stats ? `${formatNumber(stats.totalDownloads)}` : "..."} Downloads</span>
-            <span>{stats ? stats.totalApps : "..."} Apps</span>
-          </div>
           
           <Button 
             onClick={() => scrollToSection("downloads")}
