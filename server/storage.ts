@@ -29,51 +29,12 @@ export class MemStorage implements IStorage {
         name: "Calculator",
         description: "Simple desktop calculator application",
         version: "v1.0.0",
-        imageUrl: "/assets/app-screenshots/Screenshot 2025-08-14 123946.png",
-        downloadUrl: "/downloads/Calculator-1.0.0-win64.exe",
+        imageUrl: "assets/app-screenshots/Screenshot 2025-08-14 123946.png",
+        downloadUrl: "assets/app-screenshots/Calculator-1.0.0-win64.exe",
         fileSize: "45MB",
         downloads: 0
-      },
-      {
-        name: "CodeSync",
-        description: "Real-time collaborative code editor with syntax highlighting, version control integration, and live sharing capabilities.",
-        version: "v1.8.2",
-        imageUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=240",
-        downloadUrl: "/downloads/codesync.dmg",
-        fileSize: "78MB",
-        downloads: 0,
-
-      },
-      {
-        name: "DataViz Mobile",
-        description: "Mobile data visualization tool that transforms complex datasets into beautiful, interactive charts and insights.",
-        version: "v3.0.1",
-        imageUrl: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=240",
-        downloadUrl: "/downloads/dataviz-mobile.apk",
-        fileSize: "32MB",
-        downloads: 0,
-
-      },
-      {
-        name: "DevTools Pro",
-        description: "Comprehensive developer toolkit with API testing, database management, and deployment automation features.",
-        version: "v4.2.0",
-        imageUrl: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=240",
-        downloadUrl: "/downloads/devtools-pro.exe",
-        fileSize: "125MB",
-        downloads: 0,
-
-      },
-      {
-        name: "CloudSync Desktop",
-        description: "Secure cloud storage synchronization with end-to-end encryption, automatic backups, and cross-platform support.",
-        version: "v2.5.3",
-        imageUrl: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=240",
-        downloadUrl: "/downloads/cloudsync-desktop.dmg",
-        fileSize: "89MB",
-        downloads: 0,
-
-      },
+      }
+      /*
       {
         name: "Terminal Master",
         description: "Enhanced terminal emulator with modern features, customizable themes, and advanced tab management for developers.",
@@ -83,7 +44,7 @@ export class MemStorage implements IStorage {
         fileSize: "24MB",
         downloads: 0,
 
-      }
+      }*/
     ];
 
     apps.forEach(app => {
