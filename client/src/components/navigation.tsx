@@ -18,7 +18,7 @@ export default function Navigation() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex-shrink-0">
-            <h1 className="text-lg font-semibold text-slate-900">Alex Chen</h1>
+            <h1 className="text-lg font-semibold text-slate-900">SD</h1>
           </div>
           
           <div className="hidden md:block">
@@ -64,7 +64,7 @@ export default function Navigation() {
                 onClick={() => scrollToSection("contact")}
                 className="block w-full text-left text-slate-600 hover:text-slate-900 px-3 py-2 text-sm"
               >
-                Contact
+                Github
               </button>
             </div>
           </div>

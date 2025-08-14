@@ -10,7 +10,7 @@ export default function ContactSection() {
         
         <div className="flex justify-center">
           <a 
-            href="https://github.com" 
+            href="https://github.com/ShadDigital" 
             target="_blank"
             rel="noopener noreferrer"
             className="text-slate-600 hover:text-slate-900"
