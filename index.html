@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Developer Portfolio</title>
+    <title>SD</title>
     <!-- Tailwind CSS CDN for easy styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Inter font from Google Fonts -->
@@ -27,8 +27,8 @@
             <div class="flex items-center gap-6">
                 <img src="https://placehold.co/120x120/1e293b/a1a1aa?text=You" alt="Profile Picture" class="rounded-full shadow-lg border-2 border-slate-600">
                 <div>
-                    <h1 class="text-4xl font-bold text-white">Your Name</h1>
-                    <p class="text-xl text-slate-400 mt-1">Full-stack Developer & App Creator</p>
+                    <h1 class="text-4xl font-bold text-white">Shadrack Don</h1>
+                    <p class="text-xl text-slate-400 mt-1">C++ Developer and Python Expert</p>
                 </div>
             </div>
             <!-- Social Links/Contact Info -->
@@ -43,10 +43,18 @@
         <section class="mb-12">
             <h2 class="text-3xl font-bold mb-4 text-white">About Me</h2>
             <p class="text-lg leading-relaxed text-slate-300">
-                Hello! I'm a passionate developer with experience in building web applications and desktop tools. 
+                I'm a passionate developer with experience in building desktop apps and tools. 
                 I love creating intuitive and powerful software that solves real-world problems. 
-                When I'm not coding, I enjoy hiking and exploring new technologies.
+                When I'm not coding, I enjoy exploring new technologies.
             </p>
+        </section>
+
+        <!-- Total Downloads Counter -->
+        <section class="mb-12 text-center">
+            <div class="bg-slate-800 rounded-xl p-6 shadow-lg">
+                <h3 class="text-2xl font-bold text-white mb-2">Total Downloads</h3>
+                <p id="total-downloads" class="text-4xl font-extrabold text-indigo-400">0</p>
+            </div>
         </section>
 
         <!-- Apps Showcase Section -->
@@ -58,9 +66,12 @@
                 <!-- App Card 1 -->
                 <div class="bg-slate-800 rounded-xl p-6 shadow-lg transform transition-transform duration-200 hover:scale-105 flex flex-col gap-4">
                     <img src="https://placehold.co/600x400/334155/e2e8f0?text=App+1+Screenshot" alt="App 1 Screenshot" class="rounded-lg w-full">
-                    <h3 class="text-2xl font-bold text-white">App Title 1</h3>
-                    <p class="text-slate-400 flex-grow">A brief description of your first app. Highlight its key features and what makes it useful. This is where you can showcase your skills.</p>
-                    <a href="https://www.google.com" target="_blank" class="block text-center mt-auto px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold transition-colors hover:bg-indigo-500">Download</a>
+                    <h3 class="text-2xl font-bold text-white">Calculator</h3>
+                    <p class="text-slate-400 flex-grow">Standerd Calculator thats reliable.</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-indigo-400 font-bold" id="downloads-app1">0 Downloads</span>
+                        <a href="apps/Calculator-1.0.0-win64.exe" target="_blank" data-app-id="app1" class="download-btn px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold transition-colors hover:bg-indigo-500">Download</a>
+                    </div>
                 </div>
 
                 <!-- App Card 2 -->
@@ -68,7 +79,10 @@
                     <img src="https://placehold.co/600x400/334155/e2e8f0?text=App+2+Screenshot" alt="App 2 Screenshot" class="rounded-lg w-full">
                     <h3 class="text-2xl font-bold text-white">App Title 2</h3>
                     <p class="text-slate-400 flex-grow">Describe your second application in a bit more detail. Mention the technology stack or a unique problem it solves.</p>
-                    <a href="https://www.google.com" target="_blank" class="block text-center mt-auto px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold transition-colors hover:bg-indigo-500">Download</a>
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-indigo-400 font-bold" id="downloads-app2">0 Downloads</span>
+                        <a href="https://www.google.com" target="_blank" data-app-id="app2" class="download-btn px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold transition-colors hover:bg-indigo-500">Download</a>
+                    </div>
                 </div>
 
                 <!-- App Card 3 -->
@@ -76,11 +90,109 @@
                     <img src="https://placehold.co/600x400/334155/e2e8f0?text=App+3+Screenshot" alt="App 3 Screenshot" class="rounded-lg w-full">
                     <h3 class="text-2xl font-bold text-white">App Title 3</h3>
                     <p class="text-slate-400 flex-grow">This is another great app you've built. Explain its purpose and how it helps users. Add a download link here.</p>
-                    <a href="https://www.google.com" target="_blank" class="block text-center mt-auto px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold transition-colors hover:bg-indigo-500">Download</a>
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-indigo-400 font-bold" id="downloads-app3">0 Downloads</span>
+                        <a href="https://www.google.com" target="_blank" data-app-id="app3" class="download-btn px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold transition-colors hover:bg-indigo-500">Download</a>
+                    </div>
                 </div>
             </div>
         </section>
 
     </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // You MUST replace these with your actual config details from the Firebase Console
+        const firebaseConfig = {
+            apiKey: "AIzaSyBYAW6gzWRPJ2neU6_iaZwZgfdm5cHPbXM",
+            authDomain: "app-portfolio-dd8b0.firebaseapp.com",
+            projectId: "app-portfolio-dd8b0",
+            storageBucket: "app-portfolio-dd8b0.firebasestorage.app",
+            messagingSenderId: "655187205584",
+            appId: "1:655187205584:web:2850210afe7a331800edd5"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // Function to update the download count for a specific app and the total
+        async function incrementDownloadCount(appId) {
+            console.log(`Download clicked for app: ${appId}`);
+
+            // Reference the documents for the specific app and the total count
+            const appRef = db.collection('downloads').doc(appId);
+            const totalRef = db.collection('downloads').doc('total');
+
+            try {
+                // Use a transaction to make sure the updates are atomic
+                await db.runTransaction(async (transaction) => {
+                    const appDoc = await transaction.get(appRef);
+                    const totalDoc = await transaction.get(totalRef);
+
+                    let newAppCount = 1;
+                    if (appDoc.exists) {
+                        newAppCount = appDoc.data().count + 1;
+                    }
+
+                    let newTotalCount = 1;
+                    if (totalDoc.exists) {
+                        newTotalCount = totalDoc.data().count + 1;
+                    }
+
+                    // Update the counts in the database
+                    transaction.set(appRef, { count: newAppCount }, { merge: true });
+                    transaction.set(totalRef, { count: newTotalCount }, { merge: true });
+                });
+                console.log("Download count updated successfully!");
+            } catch (error) {
+                console.error("Error updating download count: ", error);
+            }
+        }
+
+        // Function to listen for changes in the database and update the UI
+        function setupDownloadListeners() {
+            // Listen for changes to the total downloads
+            db.collection('downloads').doc('total').onSnapshot(doc => {
+                if (doc.exists) {
+                    document.getElementById('total-downloads').innerText = doc.data().count;
+                }
+            }, error => {
+                console.error("Error listening to total downloads: ", error);
+            });
+
+            // Listen for changes for each app
+            ['app1', 'app2', 'app3'].forEach(appId => {
+                db.collection('downloads').doc(appId).onSnapshot(doc => {
+                    if (doc.exists) {
+                        document.getElementById(`downloads-${appId}`).innerText = `${doc.data().count} Downloads`;
+                    }
+                }, error => {
+                    console.error(`Error listening to ${appId} downloads: `, error);
+                });
+            });
+        }
+
+        // Add event listeners to all download buttons
+        document.addEventListener('DOMContentLoaded', () => {
+            const downloadButtons = document.querySelectorAll('.download-btn');
+            downloadButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const appId = event.target.dataset.appId;
+                    if (appId) {
+                        // The default link behavior will still happen
+                        incrementDownloadCount(appId);
+                    }
+                });
+            });
+
+            // Start listening for download counts
+            setupDownloadListeners();
+        });
+    </script>
 </body>
 </html>
