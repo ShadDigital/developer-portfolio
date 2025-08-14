@@ -2,8 +2,7 @@ import { useState } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { type Application } from "@shared/schema";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Download, Info, Star, HardDrive, Loader2 } from "lucide-react";
+import { Download, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 
@@ -60,66 +59,39 @@ export default function AppCard({ application, index }: AppCardProps) {
   };
 
   return (
-    <div 
-      className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 overflow-hidden group animate-slide-up"
-      style={{ animationDelay: `${index * 0.1}s` }}
-    >
+    <div className="bg-white border border-slate-200 rounded-lg overflow-hidden">
       <img 
         src={application.imageUrl}
         alt={`${application.name} interface`}
-        className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+        className="w-full h-32 object-cover"
       />
       
-      <div className="p-6">
-        <div className="flex items-start justify-between mb-3">
-          <h3 className="text-xl font-bold text-slate-900">{application.name}</h3>
-          <Badge variant="secondary" className="bg-emerald-100 text-emerald-600 text-xs font-semibold">
-            {application.version}
-          </Badge>
-        </div>
-        
-        <p className="text-slate-600 mb-4 leading-relaxed">
-          {application.description}
+      <div className="p-4">
+        <h3 className="text-lg font-semibold text-slate-900 mb-1">{application.name}</h3>
+        <p className="text-sm text-slate-600 mb-3">
+          {application.description.length > 80 
+            ? `${application.description.substring(0, 80)}...` 
+            : application.description}
         </p>
         
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center space-x-4 text-sm text-slate-500">
-            <span className="flex items-center">
-              <Download className="h-4 w-4 mr-1" />
-              {formatDownloads(application.downloads)}
-            </span>
-            <span className="flex items-center">
-              <Star className="h-4 w-4 mr-1" />
-              {application.rating}
-            </span>
-            <span className="flex items-center">
-              <HardDrive className="h-4 w-4 mr-1" />
-              {application.fileSize}
-            </span>
-          </div>
+        <div className="flex items-center justify-between mb-3 text-xs text-slate-500">
+          <span>{formatDownloads(application.downloads)} downloads</span>
+          <span>{application.fileSize}</span>
         </div>
         
-        <div className="flex space-x-2">
-          <Button 
-            onClick={handleDownload}
-            disabled={isDownloading || downloadMutation.isPending}
-            className="flex-1 bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200"
-          >
-            {isDownloading || downloadMutation.isPending ? (
-              <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-            ) : (
-              <Download className="h-4 w-4 mr-2" />
-            )}
-            Download
-          </Button>
-          <Button
-            variant="outline"
-            size="icon"
-            className="px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors duration-200"
-          >
-            <Info className="h-4 w-4" />
-          </Button>
-        </div>
+        <Button 
+          onClick={handleDownload}
+          disabled={isDownloading || downloadMutation.isPending}
+          className="w-full bg-slate-900 text-white hover:bg-slate-800"
+          size="sm"
+        >
+          {isDownloading || downloadMutation.isPending ? (
+            <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+          ) : (
+            <Download className="h-4 w-4 mr-2" />
+          )}
+          Download
+        </Button>
       </div>
     </div>
   );

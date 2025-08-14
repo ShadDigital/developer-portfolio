@@ -54,38 +54,9 @@ export default function Home() {
       <ContactSection />
       
       {/* Footer */}
-      <footer className="bg-slate-900 text-slate-400 py-12">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="text-white font-bold text-lg mb-4">DevPortfolio</h3>
-              <p className="text-slate-400 leading-relaxed">
-                Creating innovative applications and tools that make developers' lives easier and more productive.
-              </p>
-            </div>
-            
-            <div>
-              <h4 className="text-white font-semibold mb-4">Quick Links</h4>
-              <ul className="space-y-2">
-                <li><a href="#home" className="hover:text-white transition-colors duration-200">Home</a></li>
-                <li><a href="#downloads" className="hover:text-white transition-colors duration-200">Downloads</a></li>
-                <li><a href="#contact" className="hover:text-white transition-colors duration-200">Contact</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="text-white font-semibold mb-4">Support</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="hover:text-white transition-colors duration-200">Documentation</a></li>
-                <li><a href="#" className="hover:text-white transition-colors duration-200">Bug Reports</a></li>
-                <li><a href="#" className="hover:text-white transition-colors duration-200">Feature Requests</a></li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-slate-800 mt-8 pt-8 text-center">
-            <p>&copy; 2024 Alex Chen. All rights reserved.</p>
-          </div>
+      <footer className="bg-white border-t border-slate-200 py-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-sm text-slate-500">&copy; 2024 Alex Chen. All rights reserved.</p>
         </div>
       </footer>
     </div>
