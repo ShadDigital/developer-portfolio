@@ -1,10 +1,10 @@
-import { useState } from "react";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useState, useEffect } from "react";
+import { useMutation, useQueryClient, useQuery } from "@tanstack/react-query";
 import { type Application } from "@shared/schema";
 import { Button } from "@/components/ui/button";
 import { Download, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
+import { trackDownload, getDownloadCount } from "@/lib/firebase";
 
 interface AppCardProps {
   application: Application;
@@ -16,15 +16,20 @@ export default function AppCard({ application, index }: AppCardProps) {
   const { toast } = useToast();
   const queryClient = useQueryClient();
 
+  // Get current download count from Firebase
+  const { data: downloadCount = 0 } = useQuery({
+    queryKey: ['downloadCount', application.name],
+    queryFn: () => getDownloadCount(application.name),
+  });
+
   const downloadMutation = useMutation({
-    mutationFn: async (appId: string) => {
-      const response = await apiRequest("POST", `/api/applications/${appId}/download`);
-      return response.json();
+    mutationFn: async (appName: string) => {
+      const newCount = await trackDownload(appName);
+      return { downloadUrl: application.downloadUrl, count: newCount };
     },
     onSuccess: (data) => {
-      // Invalidate and refetch applications to update download count
-      queryClient.invalidateQueries({ queryKey: ["/api/applications"] });
-      queryClient.invalidateQueries({ queryKey: ["/api/stats"] });
+      // Invalidate and refetch download count
+      queryClient.invalidateQueries({ queryKey: ['downloadCount', application.name] });
       
       toast({
         title: "Download Started",
@@ -48,7 +53,7 @@ export default function AppCard({ application, index }: AppCardProps) {
 
   const handleDownload = async () => {
     setIsDownloading(true);
-    downloadMutation.mutate(application.id);
+    downloadMutation.mutate(application.name);
   };
 
   const formatDownloads = (downloads: number) => {
@@ -75,7 +80,7 @@ export default function AppCard({ application, index }: AppCardProps) {
         </p>
         
         <div className="flex items-center justify-between mb-3 text-xs text-slate-500">
-          <span>{formatDownloads(application.downloads || 0)} downloads</span>
+          <span>{formatDownloads(downloadCount)} downloads</span>
           <span>{application.fileSize}</span>
         </div>
         
