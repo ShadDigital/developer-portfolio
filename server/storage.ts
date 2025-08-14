@@ -1,4 +1,9 @@
-import { type Application, type InsertApplication, type Download, type InsertDownload } from "@shared/schema";
+import {
+  type Application,
+  type InsertApplication,
+  type Download,
+  type InsertDownload,
+} from "@shared/schema";
 import { randomUUID } from "crypto";
 
 export interface IStorage {
@@ -7,7 +12,7 @@ export interface IStorage {
   getApplication(id: string): Promise<Application | undefined>;
   createApplication(app: InsertApplication): Promise<Application>;
   incrementDownloads(id: string): Promise<void>;
-  
+
   // Downloads
   trackDownload(download: InsertDownload): Promise<Download>;
   getDownloadStats(): Promise<{ totalDownloads: number; totalApps: number }>;
@@ -31,9 +36,9 @@ export class MemStorage implements IStorage {
         version: "v1.0.0",
         imageUrl: "/assets/app-screenshots/Screenshot 2025-08-14 123946.png",
         downloadUrl: "/downloads/Calculator-1.0.0-win64.exe",
-        fileSize: "45MB",
-        downloads: 0
-      }
+        fileSize: "240KB",
+        downloads: 0,
+      },
       /*
       {
         name: "Terminal Master",
@@ -47,7 +52,7 @@ export class MemStorage implements IStorage {
       }*/
     ];
 
-    apps.forEach(app => {
+    apps.forEach((app) => {
       const id = randomUUID();
       const application: Application = {
         ...app,
@@ -60,7 +65,9 @@ export class MemStorage implements IStorage {
   }
 
   async getAllApplications(): Promise<Application[]> {
-    return Array.from(this.applications.values()).sort((a, b) => b.downloads - a.downloads);
+    return Array.from(this.applications.values()).sort(
+      (a, b) => b.downloads - a.downloads,
+    );
   }
 
   async getApplication(id: string): Promise<Application | undefined> {
@@ -100,7 +107,10 @@ export class MemStorage implements IStorage {
     return download;
   }
 
-  async getDownloadStats(): Promise<{ totalDownloads: number; totalApps: number }> {
+  async getDownloadStats(): Promise<{
+    totalDownloads: number;
+    totalApps: number;
+  }> {
     const apps = await this.getAllApplications();
     const totalDownloads = apps.reduce((sum, app) => sum + app.downloads, 0);
     return {
