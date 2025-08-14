@@ -65,36 +65,14 @@
 
                 <!-- App Card 1 -->
                 <div class="bg-slate-800 rounded-xl p-6 shadow-lg transform transition-transform duration-200 hover:scale-105 flex flex-col gap-4">
-                    <img src="https://placehold.co/600x400/334155/e2e8f0?text=App+1+Screenshot" alt="App 1 Screenshot" class="rounded-lg w-full">
+                    <img src="coverimages/Screenshot 2025-08-14 123946.png" alt="App 1 Screenshot" class="rounded-lg w-full">
                     <h3 class="text-2xl font-bold text-white">Calculator</h3>
                     <p class="text-slate-400 flex-grow">Standerd Calculator thats reliable.</p>
                     <div class="flex items-center justify-between mt-auto">
                         <span class="text-indigo-400 font-bold" id="downloads-app1">0 Downloads</span>
-                        <a href="apps/Calculator-1.0.0-win64.exe" target="_blank" data-app-id="app1" class="download-btn px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold transition-colors hover:bg-indigo-500">Download</a>
+                        <a href="apps/Calculator-1.0.0-win64.exe" target="_blank" data-app-id="calculator" class="download-btn px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold transition-colors hover:bg-indigo-500">Download</a>
                     </div>
-                </div>
-
-                <!-- App Card 2 -->
-                <div class="bg-slate-800 rounded-xl p-6 shadow-lg transform transition-transform duration-200 hover:scale-105 flex flex-col gap-4">
-                    <img src="https://placehold.co/600x400/334155/e2e8f0?text=App+2+Screenshot" alt="App 2 Screenshot" class="rounded-lg w-full">
-                    <h3 class="text-2xl font-bold text-white">App Title 2</h3>
-                    <p class="text-slate-400 flex-grow">Describe your second application in a bit more detail. Mention the technology stack or a unique problem it solves.</p>
-                    <div class="flex items-center justify-between mt-auto">
-                        <span class="text-indigo-400 font-bold" id="downloads-app2">0 Downloads</span>
-                        <a href="https://www.google.com" target="_blank" data-app-id="app2" class="download-btn px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold transition-colors hover:bg-indigo-500">Download</a>
-                    </div>
-                </div>
-
-                <!-- App Card 3 -->
-                <div class="bg-slate-800 rounded-xl p-6 shadow-lg transform transition-transform duration-200 hover:scale-105 flex flex-col gap-4">
-                    <img src="https://placehold.co/600x400/334155/e2e8f0?text=App+3+Screenshot" alt="App 3 Screenshot" class="rounded-lg w-full">
-                    <h3 class="text-2xl font-bold text-white">App Title 3</h3>
-                    <p class="text-slate-400 flex-grow">This is another great app you've built. Explain its purpose and how it helps users. Add a download link here.</p>
-                    <div class="flex items-center justify-between mt-auto">
-                        <span class="text-indigo-400 font-bold" id="downloads-app3">0 Downloads</span>
-                        <a href="https://www.google.com" target="_blank" data-app-id="app3" class="download-btn px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold transition-colors hover:bg-indigo-500">Download</a>
-                    </div>
-                </div>
+                </div>          
             </div>
         </section>
 
@@ -166,7 +144,7 @@
             });
 
             // Listen for changes for each app
-            ['app1', 'app2', 'app3'].forEach(appId => {
+            ['calculator', 'app2', 'app3'].forEach(appId => {
                 db.collection('downloads').doc(appId).onSnapshot(doc => {
                     if (doc.exists) {
                         document.getElementById(`downloads-${appId}`).innerText = `${doc.data().count} Downloads`;
