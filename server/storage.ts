@@ -26,14 +26,13 @@ export class MemStorage implements IStorage {
   private seedData() {
     const apps: InsertApplication[] = [
       {
-        name: "TaskMaster Pro",
-        description: "Advanced task management application with team collaboration features, time tracking, and productivity analytics.",
-        version: "v2.1.0",
-        imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=240",
-        downloadUrl: "/downloads/taskmaster-pro.dmg",
+        name: "Calculator",
+        description: "Simple desktop calculator application",
+        version: "v1.0.0",
+        imageUrl: "/assets/calculator-screenshot.png",
+        downloadUrl: "/downloads/Calculator-1.0.0-win64.exe",
         fileSize: "45MB",
-        downloads: 0,
-        rating: "4.9"
+        downloads: 0
       },
       {
         name: "CodeSync",
@@ -43,7 +42,7 @@ export class MemStorage implements IStorage {
         downloadUrl: "/downloads/codesync.dmg",
         fileSize: "78MB",
         downloads: 0,
-        rating: "4.7"
+
       },
       {
         name: "DataViz Mobile",
@@ -53,7 +52,7 @@ export class MemStorage implements IStorage {
         downloadUrl: "/downloads/dataviz-mobile.apk",
         fileSize: "32MB",
         downloads: 0,
-        rating: "4.8"
+
       },
       {
         name: "DevTools Pro",
@@ -63,7 +62,7 @@ export class MemStorage implements IStorage {
         downloadUrl: "/downloads/devtools-pro.exe",
         fileSize: "125MB",
         downloads: 0,
-        rating: "4.6"
+
       },
       {
         name: "CloudSync Desktop",
@@ -73,7 +72,7 @@ export class MemStorage implements IStorage {
         downloadUrl: "/downloads/cloudsync-desktop.dmg",
         fileSize: "89MB",
         downloads: 0,
-        rating: "4.9"
+
       },
       {
         name: "Terminal Master",
@@ -83,7 +82,7 @@ export class MemStorage implements IStorage {
         downloadUrl: "/downloads/terminal-master.deb",
         fileSize: "24MB",
         downloads: 0,
-        rating: "4.5"
+
       }
     ];
 

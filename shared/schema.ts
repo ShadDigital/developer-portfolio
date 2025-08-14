@@ -12,7 +12,7 @@ export const applications = pgTable("applications", {
   downloadUrl: text("download_url").notNull(),
   fileSize: text("file_size").notNull(),
   downloads: integer("downloads").default(0),
-  rating: text("rating").notNull(),
+
   createdAt: timestamp("created_at").default(sql`now()`),
 });
 

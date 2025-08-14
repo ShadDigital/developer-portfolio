@@ -36,7 +36,6 @@ export default function HeroSection({ stats }: HeroSectionProps) {
           <div className="flex justify-center gap-8 text-sm text-slate-500 mb-8">
             <span>{stats ? `${formatNumber(stats.totalDownloads)}` : "..."} Downloads</span>
             <span>{stats ? stats.totalApps : "..."} Apps</span>
-            <span>4.8 Rating</span>
           </div>
           
           <Button 
