@@ -31,8 +31,8 @@ export default function AppCard({ application, index }: AppCardProps) {
         description: `${application.name} download has been initiated.`,
       });
       
-      // In a real app, you would redirect to the download URL
-      // window.open(data.downloadUrl, '_blank');
+      // Trigger actual file download
+      window.open(data.downloadUrl, '_blank');
     },
     onError: () => {
       toast({
